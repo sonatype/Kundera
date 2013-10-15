@@ -2,12 +2,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>com.impetus</groupId>
+		<groupId>org.sonatype.nosql</groupId>
 		<artifactId>kundera</artifactId>
 		<version>2.8-SNAPSHOT</version>
 	</parent>
 
-	<groupId>com.impetus.core</groupId>
+	<groupId>org.sonatype.nosql</groupId>
 	<artifactId>kundera-core</artifactId>
 	<packaging>jar</packaging>
 	<name>kundera-core</name>

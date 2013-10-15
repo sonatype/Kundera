@@ -1,3 +1,5 @@
+Patched build of https://github.com/impetus-opensource/Kundera/
+
 Overview
 =========
 The idea behind Kundera is to make working with NoSQL Databases drop-dead simple and fun. Kundera is being developed with following objectives:
