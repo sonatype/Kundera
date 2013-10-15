@@ -316,6 +316,8 @@ public class NativeQueryTest
     {
         // CassandraCli.dropKeySpace("KunderaExamples");
         CassandraCli.dropKeySpace(schema);
+
+        KunderaMetadata.INSTANCE.setApplicationMetadata(null);
     }
 
 }

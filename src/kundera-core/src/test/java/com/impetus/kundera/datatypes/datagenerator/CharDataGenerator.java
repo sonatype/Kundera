@@ -16,14 +16,14 @@ public class CharDataGenerator implements DataGenerator<Character>
     public Character maxValue()
     {
 
-        return Character.MAX_VALUE;
+        return '~';
     }
 
     @Override
     public Character minValue()
     {
 
-        return Character.MIN_VALUE;
+        return ' ';
     }
 
     @Override
