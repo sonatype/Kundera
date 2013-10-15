@@ -84,11 +84,18 @@ public class EnumAccessor implements PropertyAccessor<Enum>
         {
             try
             {
-                return Enum.valueOf(targetClass, string.trim().toUpperCase());
+                return Enum.valueOf(targetClass, string.trim());
             }
-            catch (IllegalArgumentException ex)
+            catch (IllegalArgumentException ignore)
             {
-                throw new PropertyAccessException(ex);
+                try
+                {
+                    return Enum.valueOf(targetClass, string.trim().toUpperCase());
+                }
+                catch (IllegalArgumentException ex)
+                {
+                    throw new PropertyAccessException(ex);
+                }
             }
         }
 
