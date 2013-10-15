@@ -31,6 +31,8 @@ import java.util.Set;
 
 import javax.persistence.FlushModeType;
 import javax.persistence.LockModeType;
+import javax.persistence.NoResultException;
+import javax.persistence.NonUniqueResultException;
 import javax.persistence.Parameter;
 import javax.persistence.PersistenceException;
 import javax.persistence.PostLoad;
@@ -560,7 +562,19 @@ public abstract class QueryImpl<E> implements Query, com.impetus.kundera.query.Q
     @Override
     public Object getSingleResult()
     {
-        throw new UnsupportedOperationException("getSingleResult is unsupported by Kundera");
+        List<?> results = getResultList();
+        if ( results.size() == 1 )
+        {
+            return results.get( 0 );
+        }
+        else if ( results.isEmpty() )
+        {
+            throw new NoResultException();
+        }
+        else
+        {
+            throw new NonUniqueResultException();
+        }
     }
 
     /* @see javax.persistence.Query#setFirstResult(int) */
